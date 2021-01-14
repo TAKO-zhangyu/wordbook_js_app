@@ -16,13 +16,16 @@ $(function() {
   ]
 
   // 単語を取得する
-  $("#card-front").text(words[0].en)
-  $("#card-back").text(words[0].ja)
+  for (var i = 0; i < words.length; i++) {
+    $("#card-front").text(words[i].en)
+    $("#card-back").text(words[i].ja)
 
-  // 次のカードを表示する
-  $('#btn').on("click", function () {
-    $('#card-front').text(words[1].en)
-  });
+
+    // 次のカードを表示する
+    $('#btn').on("click", function () {
+      $('#card-front').text(words[i].en)
+    });
+  }
 
   // 表のカードから裏のカードに切り替える
   $('#card-front').on("click", function () {
