@@ -26,6 +26,10 @@ $(function() {
       $('#card-back').hide();
       $('#card-front').show();
       i++;
+      
+      if (i == words.length) {
+        i = 0;
+      }
       $('#card-front').text(words[i].en)
       $('#card-back').text(words[i].ja)
     });
@@ -38,3 +42,11 @@ $(function() {
     });
   
 });
+
+// console.log('ga')
+// $('#card-back').hide();
+// $('#card-front').show();
+
+// $('#card-front').text(words[0].en)
+// $('#card-back').text(words[0].ja)
+// }
