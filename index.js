@@ -17,7 +17,7 @@ $(function() {
 
   // 最初の単語を表示する
     var i = 0;
-    
+
     $("#card-front").text(words[i].en)
     $("#card-back").text(words[i].ja)
 
@@ -34,11 +34,15 @@ $(function() {
       $('#card-back').text(words[i].ja)
     });
     
-  // 表のカードから裏のカードに切り替える
-  $('#card-front').on("click", function () {
-      $('#card-front').hide();
-      $('#card-back').show();
-
+  // カードの裏表を切り替える
+  $('#card').on("click", function () {
+      if ($('#card-front').is(":visible")) {
+        $('#card-front').hide();
+        $('#card-back').show();
+      } else { 
+        $('#card-back').hide();
+        $('#card-front').show();
+      }
     });
   
 });
